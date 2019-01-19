@@ -16,12 +16,18 @@ class App extends Component {
     this.setState({ background: '' });
   };
 
+  renderFoodBgs = () => {
+    return foods.map((food, i) => {
+      return <Food key={i} background={food.imgUrl} />;
+    });
+  };
+
   render() {
     const { background } = this.state;
     return (
       <AppWrap>
         <AppBar handleClose={this.handleClose} background={background} />
-        <Food background={background} />
+        {this.renderFoodBgs().find(el => el.props.background === background)}
         <ul>
           {foods.map(({ name }, i) => {
             return (
@@ -37,7 +43,7 @@ class App extends Component {
 }
 
 const fadeIn = keyframes`
-  from { opacity: 0; }
+  from { opacity: 0.2; }
     to { opacity: 1; }
 `;
 
@@ -48,7 +54,7 @@ const Food = styled.div`
   z-index: -1;
   background: url(${({ background }) => background}) no-repeat center center;
   background-size: cover;
-  animation: ${fadeIn} 6s;
+  animation: ${fadeIn} 1.5s;
 `;
 
 const AppWrap = styled.div`
@@ -57,8 +63,6 @@ const AppWrap = styled.div`
   justify-content: center;
   align-items: center;
 `;
-
-
 
 const MenuItem = styled.li`
   list-style: none;
