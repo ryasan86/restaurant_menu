@@ -1,6 +1,6 @@
 const primary = '#76d7c4';
 const lightGray = '#eee';
-const darkGray = '#8d8d8d';
+const darkGray = '#2c2c2c';
 const dark = '#1d1d1d';
 
 export default {

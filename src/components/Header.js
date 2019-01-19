@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { GITHUB, CLOSE, BURGER_MENU } from './../images';
-import { GITHUB_REPO_URL } from './../constants';
+import { GITHUB, CLOSE, BURGER_MENU } from '../images';
+import { GITHUB_REPO_URL } from '../constants';
 // components
 import { Logo } from './common';
 
-class AppBar extends Component {
+class Header extends Component {
   handleClose = () => {
     this.props.handleClose('');
   };
 
   renderClose = () => {
-    const logo = <Logo src={CLOSE} onClick={this.handleClose} />;
+    const logo = <CloseIcon src={CLOSE} onClick={this.handleClose} />;
     return this.props.background ? logo : <div />;
   };
 
   render = () => {
     return (
-      <StyledAppBar>
-        <Logo src={BURGER_MENU} />
+      <StyledHeader>
+        <Logo src={BURGER_MENU} onClick={this.props.toggleFooter} />
         <a href={GITHUB_REPO_URL}>
-          <GithubLogo src={GITHUB} />
+          <GithubIcon src={GITHUB} />
         </a>
         {this.renderClose()}
-      </StyledAppBar>
+      </StyledHeader>
     );
   };
 }
 
-const StyledAppBar = styled.div`
+const StyledHeader = styled.div`
+  z-index: 1;
   width: 100%;
   padding: 10px;
   display: flex;
@@ -46,10 +47,22 @@ const wobble = keyframes`
   100% { transform: rotate(0deg) }
 `;
 
-const GithubLogo = styled(Logo)`
+const spin = keyframes`
+  0% { transform: rotate(0deg) }
+  100% { transform: rotate(720deg) }
+`;
+
+const CloseIcon = styled(Logo)`
+  animation: ${spin} 1s ease-out;
+  -webkit-animation: ${spin} 1s ease-out;
+  -moz-animation: ${spin} 1s ease-out;
+  -o-animation: ${spin} 1s ease-out;
+`;
+
+const GithubIcon = styled(Logo)`
   &:hover {
     animation: ${wobble} 1s;
   }
 `;
 
-export default AppBar;
+export default Header;
