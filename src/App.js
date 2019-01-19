@@ -32,7 +32,7 @@ class App extends Component {
   renderFood = () => {
     const { backgroundQueue } = this.state;
     return FOODS.map((food, i) => <Food key={i} background={food.imgUrl} />)
-      .filter(({ props }) => backgroundQueue.includes(props.background)) // prev and curr background
+      .filter(({ props }) => backgroundQueue.includes(props.background)) // prev and curr background only
       .sort(({ props }) => (backgroundQueue[1] === props.background ? 1 : -1)); // sort by most recent click for fade effect
   };
 
