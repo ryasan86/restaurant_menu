@@ -6,40 +6,34 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 class App extends Component {
-  state = { background: '', prevBackground: '', backgroundQueue: new Array(2), footerIsOpen: false };
+  state = {
+    backgroundQueue: new Array(2),
+    footerIsOpen: false
+  };
 
   handleSelect = e => {
     const { imgUrl } = FOODS[e.target.value];
-    if (imgUrl !== this.state.background) {
-      this.setBGs(imgUrl);
+    const { backgroundQueue } = this.state;
+    if (imgUrl !== backgroundQueue[1]) {
+      // set prev bg "backgroundQueue[0]" and curr bg "backgroundQueue[1]"
+      this.setState({ backgroundQueue: [backgroundQueue.pop(), imgUrl] });
     }
   };
 
   handleClose = () => {
-    this.setState({ background: '', prevBackground: '' });
-  };
-
-  setBGs = bg => {
-    const { background } = this.state;
-    background
-      ? this.setState({ background: bg, prevBackground: background })
-      : this.setState({ background: bg });
+    this.setState({ backgroundQueue: new Array(2) });
   };
 
   toggleFooter = () => {
     this.setState({ footerIsOpen: !this.state.footerIsOpen });
   };
 
+  // 2 elements with food backgrounds
   renderFood = () => {
-    const { background, prevBackground } = this.state;
+    const { backgroundQueue } = this.state;
     return FOODS.map((food, i) => <Food key={i} background={food.imgUrl} />)
-      .filter(
-        ({ props }) =>
-          props.background === background || props.background === prevBackground
-      )
-      .sort(({ props }) => {
-        return background === props.background ? 1 : -1;
-      });
+      .filter(({ props }) => backgroundQueue.includes(props.background)) // prev and curr background
+      .sort(({ props }) => (backgroundQueue[1] === props.background ? 1 : -1)); // sort by most recent click for fade effect
   };
 
   renderMenu = () => {
@@ -55,12 +49,12 @@ class App extends Component {
   };
 
   render() {
-    const { background, footerIsOpen } = this.state;
+    const { backgroundQueue, footerIsOpen } = this.state;
     return (
       <AppWrap footerIsOpen={footerIsOpen}>
         <Header
           handleClose={this.handleClose}
-          background={background}
+          background={backgroundQueue[1]}
           toggleFooter={this.toggleFooter}
         />
         {this.renderFood()}
