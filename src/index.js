@@ -7,10 +7,10 @@ import theme from './theme';
 // components
 import App from './App';
 
-const APP_WITH_THEME = (
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
-  );
+const WRAPPED_APP = (
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>
+);
 
-ReactDOM.render(APP_WITH_THEME, document.getElementById('root'));
+ReactDOM.render(WRAPPED_APP, document.getElementById('root'));

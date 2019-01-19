@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { foods } from './constants';
+import { FOODS } from './constants';
 // components
 import Header from './components/Header';
 import Footer from './components/Footer';
 
 class App extends Component {
-  state = { background: '', prevBackground: '', footerIsOpen: false };
+  state = { background: '', prevBackground: '', backgroundQueue: new Array(2), footerIsOpen: false };
 
   handleSelect = e => {
-    const { imgUrl } = foods[e.target.value];
+    const { imgUrl } = FOODS[e.target.value];
     if (imgUrl !== this.state.background) {
       this.setBGs(imgUrl);
     }
@@ -31,33 +31,40 @@ class App extends Component {
   };
 
   renderFood = () => {
-    return foods
-      .map((food, i) => <Food key={i} background={food.imgUrl} />)
-      .find(({ props }) => props.background === this.state.background);
+    const { background, prevBackground } = this.state;
+    return FOODS.map((food, i) => <Food key={i} background={food.imgUrl} />)
+      .filter(
+        ({ props }) =>
+          props.background === background || props.background === prevBackground
+      )
+      .sort(({ props }) => {
+        return background === props.background ? 1 : -1;
+      });
+  };
+
+  renderMenu = () => {
+    return (
+      <MenuWrap>
+        {FOODS.map(({ name }, i) => (
+          <MenuItem key={i} onClick={this.handleSelect} value={i}>
+            {name.toUpperCase()}
+          </MenuItem>
+        ))}
+      </MenuWrap>
+    );
   };
 
   render() {
     const { background, footerIsOpen } = this.state;
     return (
-      <AppWrap
-        prevBackground={this.state.prevBackground}
-        footerIsOpen={footerIsOpen}
-      >
+      <AppWrap footerIsOpen={footerIsOpen}>
         <Header
           handleClose={this.handleClose}
           background={background}
           toggleFooter={this.toggleFooter}
         />
         {this.renderFood()}
-        <MenuWrap>
-          {foods.map(({ name }, i) => {
-            return (
-              <MenuItem key={i} onClick={this.handleSelect} value={i}>
-                {name.toUpperCase()}
-              </MenuItem>
-            );
-          })}
-        </MenuWrap>
+        {this.renderMenu()}
         <Footer footerIsOpen={footerIsOpen} />
       </AppWrap>
     );
@@ -76,10 +83,10 @@ const Food = styled.div`
   background: url(${({ background }) => background}) no-repeat;
   background-position: center center;
   background-size: cover;
-  animation: ${fadeIn} 1s ease-in-out;
-  -webkit-animation: ${fadeIn} 1s ease-in-out;
-  -moz-animation: ${fadeIn} 1s ease-in-out;
-  -o-animation: ${fadeIn} 1s ease-in-out;
+  animation: ${fadeIn} 0.7s ease-in-out;
+  -webkit-animation: ${fadeIn} 0.7s ease-in-out;
+  -moz-animation: ${fadeIn} 0.7s ease-in-out;
+  -o-animation: ${fadeIn} 0.7s ease-in-out;
 `;
 
 const AppWrap = styled.div`
@@ -88,10 +95,6 @@ const AppWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(${({ prevBackground }) => prevBackground}) no-repeat;
-  background-position: center center;
-  background-size: cover;
-
 `;
 
 const MenuWrap = styled.ul`
