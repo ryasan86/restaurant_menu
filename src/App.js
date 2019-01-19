@@ -41,7 +41,7 @@ class App extends Component {
       <MenuWrap>
         {FOODS.map(({ name }, i) => (
           <MenuItem key={i} onClick={this.handleSelect} value={i}>
-            {name.toUpperCase()}
+            {name}
           </MenuItem>
         ))}
       </MenuWrap>
