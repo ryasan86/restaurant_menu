@@ -7,7 +7,7 @@ import { INSTAGRAM, FACEBOOK, YELP } from './../images';
 const Footer = ({ footerIsOpen }) => (
   <FooterWrap footerIsOpen={footerIsOpen}>
     <FooterContent>
-      <FooterText>GRUB PUB</FooterText>
+      <FooterText>GRUB TABLE RESTAURANT</FooterText>
       <FooterText>467 CREEKSIDE LANE LOS ANGELES CA</FooterText>
       <FooterText>INQUIRIES: 805-624-6561</FooterText>
       <FooterText>FOLLOW US ON:</FooterText>
