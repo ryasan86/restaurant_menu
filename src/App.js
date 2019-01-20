@@ -71,7 +71,7 @@ const fadeIn = keyframes`
 `;
 
 const Food = styled.div`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background: url(${({ background }) => background}) no-repeat;
