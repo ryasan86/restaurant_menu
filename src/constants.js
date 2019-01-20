@@ -5,7 +5,7 @@ const FOODS = [
   },
   {
     name: 'CLUB SANDWICH',
-    imgUrl: 'https://i.postimg.cc/htH1m80r/bread-breakfast-burlap-1600711.jpg'
+    imgUrl: 'https://i.postimg.cc/8kWVKMXF/bread-breakfast-burlap-1600711-scaled.jpg'
   },
   {
     name: 'BACON CHEESEBURGER',
@@ -17,12 +17,11 @@ const FOODS = [
   },
   {
     name: 'FISH FILLET',
-    imgUrl: 'https://i.postimg.cc/XYZgX19q/close-up-cooking-dinner-46239.jpg'
+    imgUrl: 'https://i.postimg.cc/Vkkp8CgW/close-up-cooking-dinner-46239-scaled.jpg'
   },
   {
     name: 'CHOCOLATE CAKE',
-    imgUrl:
-      'https://i.postimg.cc/gJpySYQL/cake-chocolate-chocolate-cake-132694.jpg'
+    imgUrl: 'https://i.postimg.cc/Xq6tS11r/cake-chocolate-chocolate-cake-132694-scaled.jpg'
   }
 ];
 
