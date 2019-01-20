@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d3271800f36239a40dff",
+    "revision": "2553ba9d9991f636b680",
     "url": "/restaurant_menu/static/css/main.abc91546.chunk.css"
   },
   {
-    "revision": "d3271800f36239a40dff",
-    "url": "/restaurant_menu/static/js/main.d3271800.chunk.js"
+    "revision": "2553ba9d9991f636b680",
+    "url": "/restaurant_menu/static/js/main.2553ba9d.chunk.js"
   },
   {
     "revision": "65273cf4a7ac7503495f",
@@ -17,7 +17,7 @@ self.__precacheManifest = [
   },
   {
     "revision": "26fdb364830d620b1f27c54e60f6e8eb",
-    "url": "/restaurant_menu/static/media/hamburger-menu-icon.26fdb364.svg"
+    "url": "/restaurant_menu/static/media/burger.26fdb364.svg"
   },
   {
     "revision": "4ad7f624e6b3f7c6cb564d706219362b",
@@ -25,7 +25,7 @@ self.__precacheManifest = [
   },
   {
     "revision": "81ca778f914864ed61c9ff102b110404",
-    "url": "/restaurant_menu/static/media/38b92ac3b861e8a754d0131437fe56eb.81ca778f.svg"
+    "url": "/restaurant_menu/static/media/close.81ca778f.svg"
   },
   {
     "revision": "98188e642554fa7deafb0cdee54ff928",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/restaurant_menu/static/media/yelp.e59fc66a.svg"
   },
   {
-    "revision": "509a348b3bca13d5cf7731386cc8f449",
+    "revision": "e5bed63136c771c93febd878b8f4064d",
     "url": "/restaurant_menu/index.html"
   }
 ];
