@@ -74,9 +74,7 @@ const Food = styled.div`
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url(${({ background }) => background}) no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background: url(${({ background }) => background}) center center/cover no-repeat;
   animation: ${fadeIn} 0.7s ease-in-out;
   -webkit-animation: ${fadeIn} 0.7s ease-in-out;
   -moz-animation: ${fadeIn} 0.7s ease-in-out;
