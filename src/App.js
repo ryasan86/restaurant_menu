@@ -13,7 +13,7 @@ class App extends Component {
 
   // preload images
   componentDidMount = () => {
-    FOODS.forEach(({imgUrl}) => {
+    FOODS.forEach(({ imgUrl }) => {
       const img = new Image();
       img.src = imgUrl;
     });
