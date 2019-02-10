@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1d978ecbf74fd69f224e",
+    "revision": "fdb0c005f0dd05aa6ba1",
     "url": "/restaurant_menu/static/css/main.abc91546.chunk.css"
   },
   {
-    "revision": "1d978ecbf74fd69f224e",
-    "url": "/restaurant_menu/static/js/main.1d978ecb.chunk.js"
+    "revision": "fdb0c005f0dd05aa6ba1",
+    "url": "/restaurant_menu/static/js/main.fdb0c005.chunk.js"
   },
   {
     "revision": "65273cf4a7ac7503495f",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/restaurant_menu/static/media/yelp.e59fc66a.svg"
   },
   {
-    "revision": "87632cfe8e5129f175acbf3057f80e8b",
+    "revision": "a1c7d3dc3229da23fb651c3b24dd17fb",
     "url": "/restaurant_menu/index.html"
   }
 ];

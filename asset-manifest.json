@@ -1,7 +1,7 @@
 {
   "main.css": "/restaurant_menu/static/css/main.abc91546.chunk.css",
-  "main.js": "/restaurant_menu/static/js/main.1d978ecb.chunk.js",
-  "main.js.map": "/restaurant_menu/static/js/main.1d978ecb.chunk.js.map",
+  "main.js": "/restaurant_menu/static/js/main.fdb0c005.chunk.js",
+  "main.js.map": "/restaurant_menu/static/js/main.fdb0c005.chunk.js.map",
   "static/js/1.65273cf4.chunk.js": "/restaurant_menu/static/js/1.65273cf4.chunk.js",
   "static/js/1.65273cf4.chunk.js.map": "/restaurant_menu/static/js/1.65273cf4.chunk.js.map",
   "runtime~main.js": "/restaurant_menu/static/js/runtime~main.0a1b5f29.js",
@@ -14,6 +14,6 @@
   "static/media/yelp.svg": "/restaurant_menu/static/media/yelp.e59fc66a.svg",
   "static/css/main.abc91546.chunk.css.map": "/restaurant_menu/static/css/main.abc91546.chunk.css.map",
   "index.html": "/restaurant_menu/index.html",
-  "precache-manifest.6ba867f024830472a88240d508377d8b.js": "/restaurant_menu/precache-manifest.6ba867f024830472a88240d508377d8b.js",
+  "precache-manifest.454a38f030c3a12555c89aede5926da1.js": "/restaurant_menu/precache-manifest.454a38f030c3a12555c89aede5926da1.js",
   "service-worker.js": "/restaurant_menu/service-worker.js"
 }
