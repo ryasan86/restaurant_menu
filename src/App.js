@@ -11,6 +11,14 @@ class App extends Component {
     footerIsOpen: false
   };
 
+  // preload images
+  componentDidMount = () => {
+    FOODS.forEach(({imgUrl}) => {
+      const img = new Image();
+      img.src = imgUrl;
+    });
+  }
+
   handleSelect = e => {
     const { imgUrl } = FOODS[e.target.value];
     const { backgroundQueue } = this.state;
@@ -55,8 +63,7 @@ class App extends Component {
         <Header
           handleClose={this.handleClose}
           background={backgroundQueue[1]}
-          toggleFooter={this.toggleFooter}
-        />
+          toggleFooter={this.toggleFooter} />
         {this.renderFood()}
         {this.renderMenu()}
         <Footer footerIsOpen={footerIsOpen} />
